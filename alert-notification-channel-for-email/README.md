@@ -1,5 +1,8 @@
 This module creates multiple notification channels with the "email" type.
 
+Example Use of the Module:
+
+```
 module "gke_email_alert_channels" {
     source          = "../../../terraform-modules/alert-notification-channel-for-email/"
 
@@ -20,3 +23,4 @@ module "gke_email_alert_channels" {
 
 
 }
+```
