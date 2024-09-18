@@ -1,0 +1,63 @@
+##################################
+### Create Logging Bucket  #######
+##################################
+
+resource "google_logging_project_bucket_config" "logging_bucket" {
+
+    project         = var.logging_bucket_project_id
+    location        = var.logging_bucket_location
+    retention_days  = var.log_retention_days
+    bucket_id       = var.logging_bucket_id
+    description     = "Audit logs export for the ${var.sink_host_project} GCP project."
+
+    dynamic "cmek_settings" {
+        for_each = var.encrypt_logs ? [1] : []
+
+        content {
+            kms_key_name = var.logging_bucket_encryption_key
+        }
+    }
+
+
+}
+
+
+###########################################################
+### Create Log Sink for the GCP Project's Audit Logs ######
+###########################################################
+
+resource "google_logging_project_sink" "log_sink" {
+    
+    name        = var.log_sink_name
+    destination = "logging.googleapis.com/${google_logging_project_bucket_config.logging_bucket.id}"
+
+    filter      = "protoPayload.@type=\"type.googleapis.com/google.cloud.audit.AuditLog\" OR logName=~\"cloudsql.googleapis.com\"" 
+    description = "Audit logs export for the ${var.sink_host_project} GCP project."
+
+    project     = var.sink_host_project
+
+    unique_writer_identity = true
+
+    depends_on = [google_logging_project_bucket_config.logging_bucket]
+
+}
+
+#############################################
+### Grant Log Sink Writer Permission  #######
+#############################################
+
+resource "google_project_iam_member" "logbucket_sink_member" {
+
+    project = var.logging_bucket_project_id
+    role    = "roles/logging.bucketWriter"
+    member  = google_logging_project_sink.log_sink.writer_identity
+
+    condition {
+        title       = "Logging Bucket writer permission."
+        description = "Grants logging.bucketWriter role to the log writer service account."
+        expression  = "resource.name.endsWith(\"locations/${google_logging_project_bucket_config.logging_bucket.location}/buckets/${google_logging_project_bucket_config.logging_bucket.bucket_id}\")"
+    }
+
+    depends_on = [google_logging_project_sink.log_sink]
+
+}

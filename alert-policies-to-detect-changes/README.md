@@ -4,10 +4,9 @@ Moreover it also checks for secrets created outside of defined replication regio
 
 Later the changes are monitored via alert policies for each.
 
-######################################
-##### Example Use of the Module ######
-######################################
+Example Use of the Module:
 
+```
 module "gcp_project_detect_changes_alerts" {
     source          = "../../terraform-modules/alert-policies-to-detect-changes/"
 
@@ -25,3 +24,4 @@ module "gcp_project_detect_changes_alerts" {
 
 
 }
+```

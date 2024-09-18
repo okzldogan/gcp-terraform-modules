@@ -1,10 +1,8 @@
 This module creates alert policies ( in total three alert policies) for CloudSQL on CPU & RAM Utilization over 90% and Postgresql Connections at 80% of capacity.
 
- ######################################
- ##### Example Use of the Module ######
- ######################################
+Example Use of the Module:
 
-
+```
 module "cloudsql_alerts" {
     source          = "../../terraform-modules/alert-policies-cloudsql-performance/"
 
@@ -24,3 +22,4 @@ module "cloudsql_alerts" {
 
 
 }
+```

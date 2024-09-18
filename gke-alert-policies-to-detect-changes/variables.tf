@@ -28,12 +28,8 @@ variable "environment" {
   type        = string
 }
 
-variable "db_engine" {
-  description = "Database Engine; insert either mysql or postgresql"
-  type        = string
-}
-
 variable "cloudsql_modifications_optional_condition" {
-  description = "The link to be indicated in the documentation to get the logs in the console."
+  description = "Optional Cloud SQL modification condition"
   type        = string
+  default     = "NOT protoPayload.authenticationInfo.principalEmail=\"terraform-host@terraform-bastion.iam.gserviceaccount.com\""
 }
