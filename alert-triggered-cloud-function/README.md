@@ -4,14 +4,12 @@ This module creates the following components:
 2. PubSub type Alert Notification channel which will receive alerts.
 3. Cloud Function which will read the PubSub message and trigger a GitHub workflow.
 
+Example Use of the Module:
 
-######################################
-##### Example Use of the Module ######
-######################################
+```hcl
 
-###################################################################
-### PubSub Topic for Alerting via PubSub to a Cloud Function ######
-###################################################################
+# PubSub Topic for Alerting via PubSub to a Cloud Function 
+
 
 resource "google_pubsub_topic" "my_alert_topic" {
 
@@ -52,9 +50,9 @@ data "archive_file" "source_code" {
 }
 
 
-######################################################
-### Create Function to Read PubSub Message   #########
-######################################################
+
+# Create Function to Read PubSub Message 
+
 
 module "pubsub_reader_cloud_function" {
     source          = "../terraform-modules/alert-triggered-cloud-function/"
@@ -91,3 +89,5 @@ module "pubsub_reader_cloud_function" {
     service_account_email           = "my-cloudfunction-service-account-email"
     
 }
+    
+```
