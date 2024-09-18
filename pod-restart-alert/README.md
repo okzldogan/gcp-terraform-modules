@@ -1,5 +1,10 @@
 This module creates multiple alerts for restarted pods in the listed namespaces.
 
+Example Use of the Module:
+
+```hcl
+
+
 module "restared_pods_alerts" {
     source          = "../../../terraform-modules/pod-restart-alert/"
 
@@ -23,3 +28,5 @@ module "restared_pods_alerts" {
 
 
 }
+
+```

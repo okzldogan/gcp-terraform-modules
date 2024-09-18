@@ -1,13 +1,11 @@
 This module creates a primary backup routing policy dns entry.
 
- ######################################
- ##### Example Use of the Module ######
- ######################################
+Example Use of the Module:
 
-
+```hcl
 
 module "primary_backup_routing_policy_dns_entry" {
-    source          = "../../../terraform-modules/dns-entry/primary-backup-policy/"      # Commented for Future Use                    
+    source          = "../../../terraform-modules/dns-entry/primary-backup-policy/"                          
 
     project_id                  = "<project-id>"
     zone_name                   = "<zone-name>"
@@ -18,10 +16,12 @@ module "primary_backup_routing_policy_dns_entry" {
     TTL                         = 300
     dns_record_type             = "A"
 
-    ILB_IP_ADDRESS              = "10.200.1.1"
-    ILB_network_url             = "projects/${var.prefix}-${var.name}/global/networks/sp-shared-vpc-dev"
-    ILB_project_id              = "${var.prefix}-${var.name}"
+    ILB_IP_ADDRESS              = "my-ip-address"
+    ILB_network_url             = "projects/my-vpc-project/global/networks/my-network"
+    ILB_project_id              = "my-vpc-project"
     ILB_region                  = "europe-west1"
 
     primary_backup_trickle_ratio    = 0.1
     enable_geo_fencing_for_backups  = true
+
+```

@@ -1,9 +1,8 @@
 This module creates an alert policy for monitoring the loadbalancer backend latency.
 
-#########################################################################
-### Create Alert Policy for Monitoring Loadbalancer Backend Latency  ####  
-#########################################################################
+Example Use of the Module 
 
+```hcl
 
 module "load_balancer_backend_latency_monitoring" {
     source          = "../terraform-modules/loadbalancer-backend-latency-alert/"
@@ -25,3 +24,5 @@ module "load_balancer_backend_latency_monitoring" {
 
 
 }
+
+```

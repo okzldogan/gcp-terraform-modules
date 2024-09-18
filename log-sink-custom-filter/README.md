@@ -2,12 +2,9 @@ This module creates a logging bucket to store the logs with a custom filer which
 
 The logs are exported via log sink and later log sink SA is granted the bucketWriter permission to write the exported logs to the logging bucket.
 
+Example Use of the Module 
 
-######################################
-##### Example Use of the Module ######
-######################################
-
-
+```hcl
 module "log_sink_companywebsite_staging_container_vulnerability_logs" {
   source          = "../terraform-modules/log-sink-custom-filter/"
 
@@ -26,3 +23,4 @@ module "log_sink_companywebsite_staging_container_vulnerability_logs" {
 
 
 }
+```

@@ -1,9 +1,9 @@
 This module creates a service account and later grants the service account GKE Workload ID permission to be used in a specific namespace in the indicated GKE cluster.
 
 
-######################################
-##### Example Use of the Module ######
-######################################
+# Example Use of the Module 
+
+```hcl
 
 module "gke_my_app_sa" {
     source          = "../../../terraform-modules/gke-workload-identity/"
@@ -19,3 +19,5 @@ module "gke_my_app_sa" {
 
 
 }
+
+```

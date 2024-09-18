@@ -1,10 +1,8 @@
 This module creates a weighted routing policy dns entry.
 
- ######################################
- ##### Example Use of the Module ######
- ######################################
+## Example Use of the Module 
 
-
+```hcl
 
 module "weighted_routing_policy_dns_entry" {
     source          = "../../../terraform-modules/dns-entry/weighted-routing-policy/"                    
@@ -20,13 +18,15 @@ module "weighted_routing_policy_dns_entry" {
     weighted_routing_config = [
         {
             weight  = 0.7
-            rrdatas = ["10.128.1.1"]
+            rrdatas = ["my-ip"]
         },
         {
             weight  = 0.3
-            rrdatas = ["10.138.1.1"]
+            rrdatas = ["my-other-ip"]
         }
     ]
 
         
 }
+
+```

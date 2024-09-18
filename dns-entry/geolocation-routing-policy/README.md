@@ -1,8 +1,8 @@
 This module creates a geolocation routing policy dns entry.
 
- ######################################
- ##### Example Use of the Module ######
- ######################################
+ # Example Use of the Module 
+
+```hcl
 
  module "weighted_routing_policy_dns_entry" {
     source          = "../../../terraform-modules/dns-entry/geolocation-routing-policy/"                        
@@ -18,14 +18,16 @@ This module creates a geolocation routing policy dns entry.
 
     geolocation_routing_config = [
         {
-            location  = "europe-west1"
-            rrdatas   = ["10.128.1.1"]
+            location  = "my-primary-region"
+            rrdatas   = ["my-ip-address"]
         },
         {
-            location  = "europe-north1"
-            rrdatas   = ["10.138.1.1"]
+            location  = "my-dr-region"
+            rrdatas   = ["my-other-ip-address"]
         }
     ]
 
         
 }
+
+```

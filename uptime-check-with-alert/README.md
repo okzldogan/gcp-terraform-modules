@@ -1,8 +1,8 @@
 This module creates an uptime check and an alert policy for the created uptime check.
 
- ######################################
- ##### Example Use of the Module ######
- ######################################
+Example Use of the Module:
+
+```hcl
 
 
 module "uptime_check_airfix" {
@@ -33,3 +33,6 @@ module "uptime_check_airfix" {
 
 
 }
+
+
+```

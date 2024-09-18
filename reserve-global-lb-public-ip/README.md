@@ -4,10 +4,9 @@ Project ID refers to the project in which the IP adress will be created.
 
 Network field requires the full qualified name as indicated in the below example.
 
- ######################################
- ##### Example Use of the Module ######
- ######################################
+Example Use of the Module:
 
+```hcl
 
 module "global_external_lb_ip" {
     source          = "../../../terraform-modules/reserve-global-lb-public-ip/"
@@ -19,3 +18,5 @@ module "global_external_lb_ip" {
 
 
 }
+
+```

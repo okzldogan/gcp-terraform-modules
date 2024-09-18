@@ -1,10 +1,8 @@
 This module creates a standard dns entry.
 
- ######################################
- ##### Example Use of the Module ######
- ######################################
+## Example Use of the Module 
 
-
+```hcl
 
 module "standard_dns_entry" {
     source          = "../../../terraform-modules/dns-entry/standard-entry/"                          
@@ -16,11 +14,11 @@ module "standard_dns_entry" {
 
     recordsets = [
         {
-            name    = "test-entry"
+            name    = "my-entry"
             type    = "A"
             ttl     = 300
             records = [
-                "10.0.1.1"
+                "ip-address-1",
             ]
         },
         {
@@ -28,10 +26,12 @@ module "standard_dns_entry" {
             type    = "A"
             ttl     = 300
             records = [
-                "10.0.2.1"
+                "ip-address-2"
             ]
         }
     ]
 
         
 }
+
+```

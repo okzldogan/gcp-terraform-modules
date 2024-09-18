@@ -1,9 +1,8 @@
 This module creates zonal backend services for a load balancer. It refers to a Kubernetes Network Endpoint Group (NEG) for the backend service.
 
-######################################
-##### Example Use of the Module ######
-######################################
+Example Use of the Module 
 
+```hcl
 
 module "loadbalancer_zonal_backends" {
     source          = "../terraform-modules/loadbalancer-zonal-backend/"
@@ -58,3 +57,5 @@ module "loadbalancer_zonal_backends" {
 
 
 }
+
+```

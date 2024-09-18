@@ -2,7 +2,8 @@ This module creates alert policies ( in total three alert policies) for CloudSQL
 
 Example Use of the Module:
 
-```
+```hcl
+
 module "cloudsql_alerts" {
     source          = "../../terraform-modules/alert-policies-cloudsql-performance/"
 

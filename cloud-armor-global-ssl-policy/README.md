@@ -14,9 +14,9 @@ RESTRICTED. Supports a reduced set of SSL features, intended to meet stricter co
 
 On the other hand "CUSTOM" profile/type lets you select SSL features individually.
 
- ######################################
- ##### Example Use of the Module ######
- ######################################
+## Example Use of the Module
+
+```hcl
 
  module "ssl_policy_tls12_compatible" {
     source          = "../../../terraform-modules/cloud-armor-global-ssl-policy/"   ### Verify the module's path
@@ -31,3 +31,4 @@ On the other hand "CUSTOM" profile/type lets you select SSL features individuall
 
 }
 
+```

@@ -1,10 +1,9 @@
 This module creates a key ring and a key under the created key ring. Later you can grant permissions of accessing the key with the key_iam_bindings block.
 
 
-######################################
-##### Example Use of the Module ######
-######################################
+Example Use of the Module 
 
+```hcl
 
 module "aq_nfs_disk_key" {
   source          = "../terraform-modules/gcp-key-management/"
@@ -36,3 +35,5 @@ module "aq_nfs_disk_key" {
   }
 
 }
+
+```

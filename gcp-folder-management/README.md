@@ -1,9 +1,9 @@
 This module creates folder(s) with folder iam bindings.
 
- ######################################
- ##### Example Use of the Module ######
- ######################################
 
+Example Use of the Module 
+
+```hcl
  module "folders" {
   source  = "../terraform-modules/gcp-folder-management/"        
 
@@ -34,3 +34,5 @@ This module creates folder(s) with folder iam bindings.
   
 
 }
+
+```

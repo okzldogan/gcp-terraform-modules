@@ -1,9 +1,11 @@
 
 This module creates a GKE workload identity binding for a GCP service account for multiple namespaces in a GKE cluster.
 
-###################################################################
-### GKE Workload ID Mapping for the Remaining DEV Namespaces  #####
-###################################################################
+Example Use of the Module
+
+```hcl
+
+# GKE Workload ID Mapping for the Remaining DEV Namespaces  
 
 module "gke_workload_id_sa_binding" {
     source          = "../../../terraform-modules/gke-workload-id-iam-only/"
@@ -19,3 +21,5 @@ module "gke_workload_id_sa_binding" {
     }
 
 }
+
+```

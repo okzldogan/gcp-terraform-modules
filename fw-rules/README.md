@@ -3,6 +3,8 @@ Creates firewall rules in a GCP project for a network.
 Example usage below:
 
 
+```hcl
+
 ##################################################################
 ### Create Firewall Rule for VM to Receive SSH IAP Connection ####
 ##################################################################
@@ -61,3 +63,4 @@ module "firewall_rules" {
   },
 
 
+```

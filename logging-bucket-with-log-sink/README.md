@@ -2,10 +2,9 @@ This module creates a logging bucket to store the logs that are being exported f
 
 The logs are exported via log sink and later log sink SA is granted the bucketWriter permission to write the exported logs to the logging bucket.
 
+# Example Use of the Module 
 
-######################################
-##### Example Use of the Module ######
-######################################
+```hcl
 
 module "logging_bucket_aq_test" {
   source          = "../../../terraform-modules/logging-bucket-with-log-sink/"
@@ -25,3 +24,5 @@ module "logging_bucket_aq_test" {
 
 
 }
+
+```

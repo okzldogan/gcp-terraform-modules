@@ -1,11 +1,9 @@
 This module creates a big query dataset.
 Grant the access permissions using the bigquery_dataset_bindings block to avoid conflicts.
 
+Example Use of the Module:
 
- ######################################
- ##### Example Use of the Module ######
- ######################################
-
+```hcl
 
 module "bigquery_my_dataset" {                                                     
     source          = "../terraform-modules/big-query-dataset/"
@@ -39,3 +37,5 @@ module "bigquery_my_dataset" {
     }
 
 }
+
+```

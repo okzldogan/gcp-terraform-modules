@@ -6,7 +6,8 @@ Later the changes are monitored via alert policies for each.
 
 Example Use of the Module:
 
-```
+```hcl
+
 module "gcp_project_detect_changes_alerts" {
     source          = "../../terraform-modules/alert-policies-to-detect-changes/"
 

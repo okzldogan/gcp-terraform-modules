@@ -1,5 +1,8 @@
 Grant IAM roles to users or groups or serviceaccounts on a GCP project.
 
+Example Use of the Module:
+
+```hcl
 
 module "project_iam_member_binding" {
     source          = "../../terraform-modules/project-iam-binding/"
@@ -26,3 +29,5 @@ module "project_iam_member_binding" {
 
 
 }
+
+```

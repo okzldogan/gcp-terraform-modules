@@ -13,9 +13,10 @@ The module can also create Public DNS zones.
 Choose the type from the below: 
 peering, forwarding, private, public, reverse_lookup or service_directory
 
- ######################################
- ##### Example Use of the Module ######
- ######################################
+
+# Example Use of the Module 
+
+```hcl
 
 module "private_dns_zone" {
     source          = "../../../terraform-modules/dns-zone/"
@@ -36,9 +37,9 @@ module "private_dns_zone" {
     force_destroy                   = false
 
     labels                          = {
-        env     = "dev"
-        cluster = "sp_gke_dev"
-        domain  = "sp_gke_dev_local"
+        env     = "my-environment"
+        cluster = "my_cluster"
+        domain  = "my_domain_local"
     }
 
     private_visibility_config_networks = [
@@ -47,3 +48,5 @@ module "private_dns_zone" {
 
         
 }
+
+```

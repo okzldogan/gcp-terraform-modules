@@ -1,8 +1,8 @@
 This module creates an artifact registry repository and configures IAM for access.
 
- ######################################
- ##### Example Use of the Module ######
- ######################################
+ # Example Use of the Module 
+
+```hcl
 
  module "docker_artifact_registry" {
     source          = "../../../infra/terraform-modules/artifact-registry-repository/"
@@ -35,3 +35,5 @@ This module creates an artifact registry repository and configures IAM for acces
         ]
     }
 }
+    
+```

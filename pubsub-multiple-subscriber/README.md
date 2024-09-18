@@ -1,33 +1,34 @@
-The present module creates multiple subscribers to a non-existent pubsub topic.
+The present module creates multiple subscribers and creates the pubsub topic.
 
-#############
-## Example ##
-#############
+Example Use of the Module:
 
-module "multiple_topic_subscription_climateready" {
+```hcl
+
+module "multiple_topic_subscription_" {
     
-    source          = "../../../terraform-modules/pubsub-multiple-subscriber/"
+    source          = "../terraform-modules/pubsub-multiple-subscriber/"
 
-    project_id                          = "${var.prefix}-${var.name}"
+    project_id                          = "my-project"
 
     labels = {
         app = "climate_ready"
         environment = "staging"
     }
 
-    topic_name = "user-upsert"
+    topic_name = "my-pubsub-topic"
 
-    pubsub_user_service_account = "${module.gke_spi_climateready_staging_app_sa.gcp_service_account_email}"
+    pubsub_user_service_account = "my-pubsub-service-account"
 
     subscription_config = [
         {
-            subscriber_name      = "carbonvista-user-upsert-sub"
+            subscriber_name      = "my-sub-1"
         },
         {
-            subscriber_name      = "carbondata-user-upsert-sub"
+            subscriber_name      = "my-sub-2"
         },
     ]
 
 
-
 }
+
+```

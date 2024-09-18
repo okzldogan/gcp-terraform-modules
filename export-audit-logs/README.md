@@ -3,22 +3,24 @@ This module creates a logging bucket to store the audit logs that are being expo
 The logs are exported via log sink and later log sink SA is granted the bucketWriter permission to write the exported logs to the logging bucket.
 
 
-######################################
-##### Example Use of the Module ######
-######################################
+# Example Use of the Module 
+
+```hcl
 
 module "aq_dev_audit_logs_export" {
   source          = "../../terraform-modules/export-audit-logs/"
 
-  logging_bucket_project_id     = "${var.prefix}-${var.name}"
-  logging_bucket_location       = "europe-west1"
-  log_retention_days            = 90
-  logging_bucket_id             = "audit-logs-export-aq-dev"
+  logging_bucket_project_id     = "my-monitoring-project"
+  logging_bucket_location       = "my-region"
+  log_retention_days            = 120
+  logging_bucket_id             = "audit-logs-export-my-project"
   encrypt_logs                  = false
 
-  log_sink_name                 = "aq-dev-audit-logs"
+  log_sink_name                 = "my-project-audit-logs"
 
-  sink_host_project             = "sp-antarctica-dev"
+  sink_host_project             = "my-application-project"
 
 
 }
+
+```

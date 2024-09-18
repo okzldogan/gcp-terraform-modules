@@ -3,9 +3,10 @@ This module create a Cloud Bucket with the option to configure CORS and Lifecyle
 The bucket ID should be globally unique, therefore a random suffix of 4 digit number is generated and assigned to the bucket ID. 
 Moreover the bucket ID gets the project name as the prefix.
 
-######################################
-##### Example Use of the Module ######
-######################################
+
+Example Use of the Module 
+
+```hcl
 
 module "gcp_bucket_with_cors" {
     source          = "../../../terraform-modules/gcp-bucket-with-iam-binding/"
@@ -100,3 +101,5 @@ module "gcp_bucket_with_cors" {
 
 
 }
+
+```

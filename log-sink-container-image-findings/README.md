@@ -5,9 +5,9 @@ The logs are exported via log sink and later log sink SA is granted the bucketWr
 This log sink is to be used for setting alerts for container image vulnerabilities via a custom log metric.
 
 
-######################################
-##### Example Use of the Module ######
-######################################
+Example Use of the Module 
+
+```hcl
 
 module "log_sink_container_analysis_findings" {
   source          = "../terraform-modules/log-sink-container-image-findings/"
@@ -29,3 +29,5 @@ module "log_sink_container_analysis_findings" {
 
 
 }
+
+```
