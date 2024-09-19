@@ -7,14 +7,14 @@ The logs are exported via log sink and later log sink SA is granted the bucketWr
 
 ```hcl
 
-module "aq_dev_audit_logs_export" {
+module "my_project_audit_logs_export" {
   source          = "../../terraform-modules/export-audit-logs/"
 
   logging_bucket_project_id     = "my-monitoring-project"
   logging_bucket_location       = "my-region"
   log_retention_days            = 120
   logging_bucket_id             = "audit-logs-export-my-project"
-  encrypt_logs                  = false
+  encrypt_logs                  = false     # set to true if you want to encrypt the logs
 
   log_sink_name                 = "my-project-audit-logs"
 

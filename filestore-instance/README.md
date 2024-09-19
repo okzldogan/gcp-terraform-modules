@@ -8,7 +8,7 @@ This module creates a filestore instance ( GCP managed NFS)
 module "filestore_instance" {
     source          = "../terraform-modules/filestore-instance/"
 
-    filestore_instance_name     = "k8s-volumes-${var.env}"
+    filestore_instance_name     = "k8s-volume"
     filestore_tier              = "BASIC_HDD"
     project_id                  = "my-filestore-project"
 

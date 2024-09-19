@@ -28,7 +28,7 @@ module "private_dns_zone" {
 
     domain_name                     = "example.local."      # "Final character with a dot"
 
-    zone_description                = "Private DNS Zone for DEV Environment"
+    zone_description                = "Private DNS Zone for MY-ENVIRONMENT Environment"
 
     enable_cloud_logging            = false     # Available only for Public Zones
 
