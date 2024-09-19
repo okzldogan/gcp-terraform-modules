@@ -5,17 +5,17 @@ Example Use of the Module:
 ```hcl
 
 
-module "uptime_check_airfix" {
-    source          = "../../terraform-modules/uptime-check-with-alert/"
+module "uptime_check" {
+    source          = "../terraform-modules/uptime-check-with-alert/"
 
-    project_id                      = "${var.prefix}-${var.name}"
+    project_id                      = "my-website"
 
     uptime_check_display_name       = "MY-WEBSITE"
 
     uptime_check_request_wait_time  = "10s"
     uptime_check_frequency          = "60s"
 
-    uptime_url = "www.airfixcarbon.com"
+    uptime_url = "www.my-url.com"
 
 
     accepted_response_status_codes = {
