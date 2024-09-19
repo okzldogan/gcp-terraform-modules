@@ -15,7 +15,7 @@ module "my_vm_static_internal_ip" {
     name                        = "my-vm-static-ip"
     internal_ip_address         = "<ip-address>             # It should be within the IP range of the indicated subnet
     description                 = "<description>"
-    subnet                      = "projects/<subnet-project-id>/regions/<region>/subnetworks/<subnet-name>"
+    subnet                      = "projects/<network-project-id>/regions/<region>/subnetworks/<subnet-name>"
     region                      = "<region>"
 
 }
