@@ -5,7 +5,7 @@ Example Use of the Module
 
 ```hcl
 
-module "aq_nfs_disk_key" {
+module "nfs_disk_key" {
   source          = "../terraform-modules/gcp-key-management/"
 
   key_ring_name             = "<key-ring-name>"   
