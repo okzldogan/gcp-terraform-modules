@@ -6,7 +6,7 @@ The logs are exported via log sink and later log sink SA is granted the bucketWr
 
 ```hcl
 
-module "logging_bucket_aq_test" {
+module "logging_bucket" {
   source          = "../../../terraform-modules/logging-bucket-with-log-sink/"
 
   logging_bucket_project_id     = "my-project"
